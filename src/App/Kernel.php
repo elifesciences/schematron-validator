@@ -28,47 +28,50 @@ use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use Webmozart\Json\JsonDecoder;
 
-final class Kernel implements MinimalKernel {
-  const ROOT = __DIR__ . '/../..';
+final class Kernel implements MinimalKernel
+{
+    const ROOT = __DIR__.'/../..';
 
-  public static $routes = [
+    public static $routes = [
     '/' => 'indexAction',
   ];
 
-  private $app;
+    private $app;
 
-  public function __construct($config = []) {
-    $app = new Application();
+    public function __construct($config = [])
+    {
+        $app = new Application();
     // Load config
     $app['config'] = array_merge([
-      'cli'              => FALSE,
-      'api_url'          => 'http://0.0.0.0:1234',
-      'debug'            => FALSE,
-      'validate'         => FALSE,
-      'annotation_cache' => TRUE,
-      'ttl'              => 3600,
+      'cli' => false,
+      'api_url' => 'http://0.0.0.0:1234',
+      'debug' => false,
+      'validate' => false,
+      'annotation_cache' => true,
+      'ttl' => 3600,
     ], $config);
     // Annotations.
     AnnotationRegistry::registerAutoloadNamespace(
-      'JMS\Serializer\Annotation', self::ROOT . '/vendor/jms/serializer/src'
+      'JMS\Serializer\Annotation', self::ROOT.'/vendor/jms/serializer/src'
     );
-    if ($app['config']['debug']) {
-      $app->register(new VarDumperServiceProvider());
-      $app->register(new Provider\HttpFragmentServiceProvider());
-      $app->register(new Provider\ServiceControllerServiceProvider());
-      $app->register(new Provider\TwigServiceProvider());
-      $app->register(new Provider\WebProfilerServiceProvider(), [
-        'profiler.cache_dir'    => self::ROOT . '/cache/profiler',
+        if ($app['config']['debug']) {
+            $app->register(new VarDumperServiceProvider());
+            $app->register(new Provider\HttpFragmentServiceProvider());
+            $app->register(new Provider\ServiceControllerServiceProvider());
+            $app->register(new Provider\TwigServiceProvider());
+            $app->register(new Provider\WebProfilerServiceProvider(), [
+        'profiler.cache_dir' => self::ROOT.'/cache/profiler',
         'profiler.mount_prefix' => '/_profiler', // this is the default
       ]);
-    }
+        }
     // DI.
     $this->dependencies($app);
     // Add to class once set up.
     $this->app = $this->applicationFlow($app);
-  }
+    }
 
-  public function dependencies(Application $app) {
+    public function dependencies(Application $app)
+    {
 
     //#####################################################
     // -------------------- Basics -----------------------
@@ -76,40 +79,40 @@ final class Kernel implements MinimalKernel {
 
     // Serializer.
     $app['serializer'] = function () {
-      return SerializerBuilder::create()
+        return SerializerBuilder::create()
           ->configureListeners(function (EventDispatcher $dispatcher) {
-            // Configure discriminators and subscribers here.
+              // Configure discriminators and subscribers here.
             // See search for example.
             // $dispatcher->addSubscriber(new ElasticsearchDiscriminator());
           })
-          ->setCacheDir(self::ROOT . '/cache')
+          ->setCacheDir(self::ROOT.'/cache')
           ->build()
         ;
     };
-    $app['serializer.context'] = function () {
-      return SerializationContext::create();
-    };
+        $app['serializer.context'] = function () {
+            return SerializationContext::create();
+        };
     // Puli.
     $app['puli.factory'] = function () {
-      $factoryClass = PULI_FACTORY_CLASS;
+        $factoryClass = PULI_FACTORY_CLASS;
 
-      return new $factoryClass();
+        return new $factoryClass();
     };
     // Puli repo.
     $app['puli.repository'] = function (Application $app) {
-      return $app['puli.factory']->createRepository();
+        return $app['puli.factory']->createRepository();
     };
     // General cache.
     $app['cache'] = function () {
-      return new FilesystemCache(self::ROOT . '/cache');
+        return new FilesystemCache(self::ROOT.'/cache');
     };
     // Annotation reader.
     $app['annotations.reader'] = function (Application $app) {
-      if ($app['config']['annotation_cache'] === FALSE) {
-        return new AnnotationReader();
-      }
+        if ($app['config']['annotation_cache'] === false) {
+            return new AnnotationReader();
+        }
 
-      return new CachedReader(
+        return new CachedReader(
         new AnnotationReader(),
         $app['cache'],
         $app['config']['debug']
@@ -117,11 +120,11 @@ final class Kernel implements MinimalKernel {
     };
     // PSR-7 Bridge
     $app['psr7.bridge'] = function () {
-      return new DiactorosFactory();
+        return new DiactorosFactory();
     };
     // Validator.
     $app['puli.validator'] = function (Application $app) {
-      return new JsonMessageValidator(
+        return new JsonMessageValidator(
         new PuliSchemaFinder($app['puli.repository']),
         new JsonDecoder()
       );
@@ -132,9 +135,9 @@ final class Kernel implements MinimalKernel {
     //#####################################################
 
     $app['guzzle'] = function (Application $app) {
-      // Create default HandlerStack
+        // Create default HandlerStack
       $stack = HandlerStack::create();
-      $stack->push(
+        $stack->push(
         new CacheMiddleware(
           new PublicCacheStrategy(
             new DoctrineCacheStorage(
@@ -145,83 +148,90 @@ final class Kernel implements MinimalKernel {
         'cache'
       );
 
-      return new Client([
+        return new Client([
         'base_uri' => $app['config']['api_url'],
-        'handler'  => $stack,
+        'handler' => $stack,
       ]);
     };
 
-    $app['api.sdk'] = function (Application $app) {
-      return new ApiSdk(
+        $app['api.sdk'] = function (Application $app) {
+            return new ApiSdk(
         new Guzzle6HttpClient(
           $app['guzzle']
         )
       );
-    };
+        };
 
-    $app['default_controller'] = function () {
-      return new DefaultController();
-    };
-  }
+        $app['default_controller'] = function () {
+            return new DefaultController();
+        };
+    }
 
-  public function applicationFlow(Application $app) : Application {
-    // Routes
+    public function applicationFlow(Application $app) : Application
+    {
+        // Routes
     $this->routes($app);
     // Validate.
     if ($app['config']['validate']) {
-      $app->after([$this, 'validate'], 2);
+        $app->after([$this, 'validate'], 2);
     }
     // Cache.
     if ($app['config']['ttl'] > 0) {
-      $app->after([$this, 'cache'], 3);
+        $app->after([$this, 'cache'], 3);
     }
     // Error handling.
     if (!$app['config']['debug']) {
-      $app->error([$this, 'handleException']);
+        $app->error([$this, 'handleException']);
     }
     // Return
     return $app;
-  }
-
-  public function routes(Application $app) {
-    foreach (self::$routes as $route => $action) {
-      $app->get($route, [$app['default_controller'], $action]);
     }
-  }
 
-  public function handleException($e) : Response {
-  }
+    public function routes(Application $app)
+    {
+        foreach (self::$routes as $route => $action) {
+            $app->get($route, [$app['default_controller'], $action]);
+        }
+    }
 
-  public function withApp(callable $fn) {
-    $boundFn = Closure::bind($fn, $this);
-    $boundFn($this->app);
+    public function handleException($e) : Response
+    {
+    }
 
-    return $this;
-  }
+    public function withApp(callable $fn)
+    {
+        $boundFn = Closure::bind($fn, $this);
+        $boundFn($this->app);
 
-  public function run() {
-    return $this->app->run();
-  }
+        return $this;
+    }
 
-  public function get($d) {
-    return $this->app[$d];
-  }
+    public function run()
+    {
+        return $this->app->run();
+    }
 
-  public function validate(Request $request, Response $response) {
-    try {
-      if (strpos($response->headers->get('Content-Type'), 'json')) {
-        $this->app['puli.validator']->validate(
+    public function get($d)
+    {
+        return $this->app[$d];
+    }
+
+    public function validate(Request $request, Response $response)
+    {
+        try {
+            if (strpos($response->headers->get('Content-Type'), 'json')) {
+                $this->app['puli.validator']->validate(
           $this->app['psr7.bridge']->createResponse($response)
         );
-      }
+            }
+        } catch (Throwable $e) {
+            if ($this->app['config']['debug']) {
+                throw $e;
+            }
+        }
     }
-    catch (Throwable $e) {
-      if ($this->app['config']['debug']) {
-        throw $e;
-      }
-    }
-  }
 
-  public function cache(Request $request, Response $response) {
-  }
+    public function cache(Request $request, Response $response)
+    {
+    }
 }
