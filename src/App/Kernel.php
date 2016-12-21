@@ -27,6 +27,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use Webmozart\Json\JsonDecoder;
+use Monolog\Handler\LogglyHandler;
+use Monolog\Handler\PHPConsoleHandler;
+use Monolog\Formatter\JsonFormatter;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 final class Kernel implements MinimalKernel
 {
@@ -63,6 +68,9 @@ final class Kernel implements MinimalKernel
         'profiler.cache_dir' => self::ROOT.'/cache/profiler',
         'profiler.mount_prefix' => '/_profiler', // this is the default
       ]);
+          $app->register(new Provider\MonologServiceProvider(), array(
+            'monolog.level' => Logger::DEBUG
+          ));
         }
     // DI.
     $this->dependencies($app);
@@ -130,6 +138,25 @@ final class Kernel implements MinimalKernel
       );
     };
 
+      $app['logger'] = function (Application $app) {
+        $logger = new Logger('standard');
+        if ($app['config']['file_log_path']) {
+          $logger->pushHandler(new StreamHandler($app['config']['file_log_path'], $app['config']['debug_level']));
+        }
+        if ($app['config']['file_error_log_path']) {
+          $logger->pushHandler(new StreamHandler($app['config']['file_error_log_path'], Logger::ERROR));
+        }
+        if ($app['config']['loggly_key']) {
+          $logger->pushHandler(new LogglyHandler($app['config']['loggly_key']));
+        }
+        return $logger;
+      };
+
+      $app['logger.cli'] = function (Application $app) {
+        return $app['logger'];
+      };
+
+
     //#####################################################
     // ------------------ Networking ---------------------
     //#####################################################
@@ -162,8 +189,8 @@ final class Kernel implements MinimalKernel
       );
         };
 
-        $app['default_controller'] = function () {
-            return new DefaultController();
+        $app['default_controller'] = function (Application $app) {
+            return new DefaultController($app['logger']);
         };
     }
 
