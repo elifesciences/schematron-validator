@@ -2,9 +2,7 @@
     "name": "elife/silex-starter",
     "description": "eLife Silex Starter Project",
     "require": {
-        "elife/api-validator": "dev-master#6dc70d7",
-        "elife/api-sdk": "dev-master#b2f591b844",
-        "elife/api": "dev-master#b3b1321",
+        "elife/bus-sdk": "dev-master",
         "silex/silex": "^2.0",
         "symfony/psr-http-message-bridge": "^0.2.0",
         "zendframework/zend-diactoros": "^1.3",
