@@ -112,8 +112,7 @@ final class Console
                 ->register($name)
                 ->setDescription($cmd['description'] ?? $name.' command')
                 ->setCode(Closure::bind(function (InputInterface $input, OutputInterface $output) use ($fn, $name) {
-                    $logger = new CliLogger($input, $output);
-                    $this->{$fn.'Command'}($input, $output, $logger);
+                    $this->{$fn.'Command'}($input, $output);
                 }, $this));
 
             if (isset($cmd['args'])) {
