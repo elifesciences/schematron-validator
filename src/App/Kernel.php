@@ -11,6 +11,7 @@ use eLife\ApiClient\HttpClient\Guzzle6HttpClient;
 use eLife\ApiSdk\ApiSdk;
 use eLife\ApiValidator\MessageValidator\JsonMessageValidator;
 use eLife\ApiValidator\SchemaFinder\PuliSchemaFinder;
+use eLife\Logging\LoggingFactory;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
@@ -27,11 +28,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use Webmozart\Json\JsonDecoder;
-use Monolog\Handler\LogglyHandler;
-use Monolog\Handler\PHPConsoleHandler;
-use Monolog\Formatter\JsonFormatter;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 
 final class Kernel implements MinimalKernel
 {
@@ -54,6 +50,7 @@ final class Kernel implements MinimalKernel
       'validate' => false,
       'annotation_cache' => true,
       'ttl' => 3600,
+      'file_logs_path' => self::ROOT.'/var/logs',
     ], $config);
     // Annotations.
     AnnotationRegistry::registerAutoloadNamespace(
@@ -138,23 +135,10 @@ final class Kernel implements MinimalKernel
       );
     };
 
-      $app['logger'] = function (Application $app) {
-        $logger = new Logger('standard');
-        if ($app['config']['file_log_path']) {
-          $logger->pushHandler(new StreamHandler($app['config']['file_log_path'], $app['config']['debug_level']));
-        }
-        if ($app['config']['file_error_log_path']) {
-          $logger->pushHandler(new StreamHandler($app['config']['file_error_log_path'], Logger::ERROR));
-        }
-        if ($app['config']['loggly_key']) {
-          $logger->pushHandler(new LogglyHandler($app['config']['loggly_key']));
-        }
-        return $logger;
-      };
-
-      $app['logger.cli'] = function (Application $app) {
-        return $app['logger'];
-      };
+    $app['logger'] = function (Application $app) {
+        $factory = new LoggingFactory($app['config']['file_logs_path'], 'starter');
+        return $factory->logger();
+    };
 
 
     //#####################################################
