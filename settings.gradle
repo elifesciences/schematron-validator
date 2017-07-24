@@ -1,0 +1,5 @@
+rootProject.name = 'schematron-validator'
+include 'schematron-validator-intellij'
+include 'schematron-validator-common'
+include 'schematron-validator-api'
+
