@@ -1,3 +1,2 @@
 group 'org.elifesciences'
-version '1.0-SNAPSHOT'
-
+version currentVersion
