@@ -12,15 +12,6 @@ public final class DocumentSchema {
 	 */
 	private String path;
 
-	public DocumentSchema() {
-
-	}
-
-	public DocumentSchema(String id, String path) {
-		this.id = id;
-		this.path = path;
-	}
-
 	public String getId() {
 		return id;
 	}
