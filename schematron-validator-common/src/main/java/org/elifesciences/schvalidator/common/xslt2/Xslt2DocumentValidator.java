@@ -1,9 +1,8 @@
 package org.elifesciences.schvalidator.common.xslt2;
 
-import com.helger.commons.io.resource.inmemory.ReadableResourceInputStream;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.xslt.SchematronResourceSCH;
-import com.helger.schematron.xslt.SchematronResourceXSLT;
 import org.elifesciences.schvalidator.common.*;
 import org.oclc.purl.dsdl.svrl.FailedAssert;
 import org.oclc.purl.dsdl.svrl.SchematronOutputType;
@@ -11,7 +10,6 @@ import org.oclc.purl.dsdl.svrl.SuccessfulReport;
 import org.w3c.dom.Document;
 
 import javax.xml.transform.dom.DOMSource;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +19,9 @@ public final class Xslt2DocumentValidator implements DocumentValidator {
 	private final Map<String, ISchematronResource> schemaMap = new HashMap<>();
 
 	@Override
-	public void registerSchema(String schemaName, InputStream input)
+	public void registerSchema(String schemaName, String inputPath)
 		throws InvalidSchemaException, DocumentValidatorException {
-		final ReadableResourceInputStream resource = new ReadableResourceInputStream(input);
+		final ClassPathResource resource = new ClassPathResource(inputPath);
 		final SchematronResourceSCH schema = new SchematronResourceSCH(resource);
 
 		if (!schema.isValidSchematron()) {
