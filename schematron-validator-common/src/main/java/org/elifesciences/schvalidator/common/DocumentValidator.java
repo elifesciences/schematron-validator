@@ -18,11 +18,10 @@ public interface DocumentValidator {
 
 	/**
 	 * Register a schema with this validator.
-	 *
 	 * @param schemaName The name to associate with this schema.
-	 * @param input The source to load the schema from.
+	 * @param inputPath The source to load the schema from.
 	 */
-	void registerSchema(String schemaName, InputStream input) throws InvalidSchemaException, DocumentValidatorException;
+	void registerSchema(String schemaName, String inputPath) throws InvalidSchemaException, DocumentValidatorException;
 
 	/**
 	 * Validate an XML document against a schema with the given {@code schemaName}.

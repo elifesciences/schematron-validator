@@ -31,10 +31,7 @@ public class DocumentValidatorApplication {
 	@PostConstruct
 	public void registerSchemas() throws DocumentValidatorException, InvalidSchemaException {
 		for (DocumentSchema schema : schemas) {
-			String schemaName = schema.getId();
-			InputStream schemaSource = DocumentValidatorApplication.class.getResourceAsStream(schema.getPath());
-
-			validator.registerSchema(schemaName, schemaSource);
+			validator.registerSchema(schema.getId(), schema.getPath());
 		}
 	}
 }

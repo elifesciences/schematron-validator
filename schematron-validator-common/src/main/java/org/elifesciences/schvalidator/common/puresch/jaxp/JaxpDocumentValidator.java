@@ -1,6 +1,7 @@
 package org.elifesciences.schvalidator.common.puresch.jaxp;
 
 import com.google.common.collect.ImmutableList;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.resource.inmemory.ReadableResourceInputStream;
 import com.helger.schematron.SchematronException;
 import com.helger.schematron.pure.binding.IPSQueryBinding;
@@ -17,7 +18,6 @@ import org.elifesciences.schvalidator.common.*;
 import org.oclc.purl.dsdl.svrl.SchematronOutputType;
 import org.w3c.dom.Document;
 
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,12 +28,12 @@ public final class JaxpDocumentValidator implements DocumentValidator {
 	private final Map<String, IPSBoundSchema> schemaMap = new HashMap<>();
 
 	@Override
-	public void registerSchema(String schemaName, InputStream source)
+	public void registerSchema(String schemaName, String source)
 		throws DocumentValidatorException, InvalidSchemaException {
 		CollectingPSErrorHandler errorHandler = new CollectingPSErrorHandler();
 
 		try {
-			PSReader schemaReader = new PSReader(new ReadableResourceInputStream(source));
+			PSReader schemaReader = new PSReader(new ClassPathResource(source));
 			PSSchema schema = schemaReader.readSchema();
 
 			if (!schema.isValid(errorHandler)) {

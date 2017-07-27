@@ -1,0 +1,4 @@
+validator:
+  schemas:
+    - id: sample-schema
+      path: /fixtures/sample-schema.sch
