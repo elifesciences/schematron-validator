@@ -53,11 +53,11 @@ public final class Xslt2DocumentValidator implements DocumentValidator {
 			for (Object assertion : assertions) {
 				if (assertion instanceof FailedAssert) {
 					FailedAssert error = (FailedAssert) assertion;
-					DiagnosticLevel level = DiagnosticLevel.from(error.getRole());
+					DiagnosticLevel level = DiagnosticLevel.valueOf(error.getRole().toUpperCase());
 					diagnostics.add(new Diagnostic(error.getLocation(), error.getText(), level));
 				} else if (assertion instanceof SuccessfulReport) {
 					SuccessfulReport report = (SuccessfulReport) assertion;
-					DiagnosticLevel level = DiagnosticLevel.from(report.getRole());
+					DiagnosticLevel level = DiagnosticLevel.valueOf(report.getRole().toUpperCase());
 					diagnostics.add(new Diagnostic(report.getLocation(), report.getText(), level));
 				}
 			}
