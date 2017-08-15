@@ -38,8 +38,6 @@ dependencies {
     }
 
     compile project(':schematron-validator-common')
-
-    compile group: 'com.helger', name: 'ph-schematron', version: '4.1.0'
     compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
 
     testCompile group: 'junit', name: 'junit'
