@@ -1,0 +1,6 @@
+validator:
+  schemas:
+    - id: pre-edit
+      path: /schemas/eLife-elem-citation-driver-pre-edit.sch
+    - id: final
+      path: /schemas/eLife-elem-citation-driver-final.sch
