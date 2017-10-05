@@ -4,12 +4,22 @@ import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.xslt.SchematronResourceSCH;
 import org.elifesciences.schvalidator.common.*;
+import org.elifesciences.schvalidator.common.puresch.jaxp.XsltTransformableSchematronResource;
 import org.oclc.purl.dsdl.svrl.FailedAssert;
 import org.oclc.purl.dsdl.svrl.SchematronOutputType;
 import org.oclc.purl.dsdl.svrl.SuccessfulReport;
 import org.w3c.dom.Document;
 
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,16 +29,30 @@ public final class Xslt2DocumentValidator implements DocumentValidator {
 	private final Map<String, ISchematronResource> schemaMap = new HashMap<>();
 
 	@Override
-	public void registerSchema(String schemaName, String inputPath)
+	public void registerSchema(String schemaName, String inputPath, List<String> transformerPaths)
 		throws InvalidSchemaException, DocumentValidatorException {
+
+		final List<Transformer> transformerList = new ArrayList<>();
+		final TransformerFactory factory = TransformerFactory.newInstance();
+
+		for (String transformerPath : transformerPaths) {
+			URL xsltURL = this.getClass().getResource(transformerPath);
+			try {
+				Source xslt = new StreamSource(xsltURL.openStream(), xsltURL.toExternalForm());
+				Transformer transformer = factory.newTransformer(xslt);
+				transformerList.add(transformer);
+			} catch (IOException  | TransformerConfigurationException e) {
+				throw new InvalidSchemaException("Failed to create transformers", e);
+			}
+		}
+
 		final ClassPathResource resource = new ClassPathResource(inputPath);
-		final SchematronResourceSCH schema = new SchematronResourceSCH(resource);
+		final SchematronResourceSCH schema = new XsltTransformableSchematronResource(resource, transformerList);
 
 		if (!schema.isValidSchematron()) {
 			throw new InvalidSchemaException(schemaName);
 		}
 
-		schema.setUseCache(true);
 		schemaMap.put(schemaName, schema);
 	}
 

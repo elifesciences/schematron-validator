@@ -2,26 +2,26 @@
 
 namespace eLife\App;
 
-use Symfony\Component\HttpFoundation\Response;
-use Monolog\Logger;
+use eLife\App\Service\BackendClient;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 final class DefaultController
 {
-
-  private $logger;
-
-  /**
-   * DefaultController constructor.
-   */
-  public function __construct(Logger $logger) {
-    $this->logger = $logger;
-  }
-
-  public function indexAction()
+    public function __construct(BackendClient $client)
     {
+        $this->client = $client;
+    }
 
-//      $this->logger->info("testing");
-//      $this->logger->debug("debug test");
-        return new Response('Hello world!');
+    public function validateFile(Request $request, string $schemaId)
+    {
+        $documentFilePath = $request->files->get('document');
+        $documentFile = fopen($documentFilePath->getRealPath(), 'r');
+
+        try {
+            return new JsonResponse($this->client->validateDocument($schemaId, $documentFile));
+        } finally {
+            fclose($documentFile);
+        }
     }
 }

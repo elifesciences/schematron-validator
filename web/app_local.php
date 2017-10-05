@@ -22,10 +22,10 @@ if (!file_exists(__DIR__.'/../vendor/autoload.php')) {
 require_once __DIR__.'/bootstrap.php';
 use eLife\App\Kernel;
 
-if (!file_exists(__DIR__.'/../config/local.php')) {
+if (!file_exists(__DIR__.'/../config/config.php')) {
     $body = <<<'HTML'
         <p>To develop using the eLife Silex Starter you need to set up a local configuration</p>
-            <p>Please copy the example or add the following (including php start tag) to ./config/local.php</p>
+            <p>Please copy the example or add the following (including php start tag) to ./config/config.php</p>
 
             <pre style="margin: 0;">
                 <code>
