@@ -46,7 +46,7 @@ return [
 HTML;
     echo sprintf($doc, $body);
 } else {
-    $config = include __DIR__.'/../config/local.php';
+    $config = include __DIR__.'/../config/config.php';
     // Start output buffer to catch anything unexpected.
     ob_start();
     // Wrap kernel.

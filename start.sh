@@ -1,4 +1,4 @@
 #!/bin/sh
 
-./backend/gradlew bootRun &
+./backend/gradlew -p ./backend/ bootRun &
 composer server
