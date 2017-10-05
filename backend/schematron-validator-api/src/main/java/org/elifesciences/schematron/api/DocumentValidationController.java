@@ -19,10 +19,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Controller
 public final class DocumentValidationController {
 	public static final String VALIDATE_FILE_PATH = "/document-validator/{schemaId}/file";
+
+	private static final Logger logger = Logger.getLogger(DocumentValidationController.class.getName());
 
 	private final DocumentSchemaCollection schemas;
 	private final DocumentValidator validator;
@@ -57,10 +61,11 @@ public final class DocumentValidationController {
 	}
 
 	@ExceptionHandler(DocumentValidatorException.class)
-	public ResponseEntity<String> handleValidationError() {
+	public ResponseEntity<String> handleValidationError(DocumentValidatorException ex) {
 		Locale locale = LocaleContextHolder.getLocale();
 		String errorMessage = messages.getMessage("app.error.internal", null, locale);
 
+		logger.log(Level.SEVERE, "Encountered an error running document validator", ex);
 		return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 

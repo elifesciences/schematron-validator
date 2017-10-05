@@ -16,12 +16,15 @@ import java.util.List;
  */
 public interface DocumentValidator {
 
+	String DOCUMENT_LOAD_EXTERNAL_DTDS = "http://apache.org/xml/features/nonvalidating/load-external-dtd";
+
 	/**
 	 * Register a schema with this validator.
 	 * @param schemaName The name to associate with this schema.
 	 * @param inputPath The source to load the schema from.
+	 * @param transformerPaths
 	 */
-	void registerSchema(String schemaName, String inputPath) throws InvalidSchemaException, DocumentValidatorException;
+	void registerSchema(String schemaName, String inputPath, List<String> transformerPaths) throws InvalidSchemaException, DocumentValidatorException;
 
 	/**
 	 * Validate an XML document against a schema with the given {@code schemaName}.
@@ -37,6 +40,8 @@ public interface DocumentValidator {
 			   InvalidDocumentException {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setFeature(DOCUMENT_LOAD_EXTERNAL_DTDS, false);
+
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document doc = builder.parse(new InputSource(document));
 

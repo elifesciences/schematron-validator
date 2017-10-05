@@ -2,7 +2,6 @@ package org.elifesciences.schvalidator.common.puresch.jaxp;
 
 import com.google.common.collect.ImmutableList;
 import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.io.resource.inmemory.ReadableResourceInputStream;
 import com.helger.schematron.SchematronException;
 import com.helger.schematron.pure.binding.IPSQueryBinding;
 import com.helger.schematron.pure.binding.PSQueryBindingRegistry;
@@ -28,7 +27,7 @@ public final class JaxpDocumentValidator implements DocumentValidator {
 	private final Map<String, IPSBoundSchema> schemaMap = new HashMap<>();
 
 	@Override
-	public void registerSchema(String schemaName, String source)
+	public void registerSchema(String schemaName, String source, List<String> transformerPaths)
 		throws DocumentValidatorException, InvalidSchemaException {
 		CollectingPSErrorHandler errorHandler = new CollectingPSErrorHandler();
 

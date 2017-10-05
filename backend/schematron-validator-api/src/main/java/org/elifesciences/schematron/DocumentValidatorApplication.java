@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
-import java.io.InputStream;
+import java.util.Collections;
 
 @SpringBootApplication
 public class DocumentValidatorApplication {
@@ -31,7 +31,7 @@ public class DocumentValidatorApplication {
 	@PostConstruct
 	public void registerSchemas() throws DocumentValidatorException, InvalidSchemaException {
 		for (DocumentSchema schema : schemas) {
-			validator.registerSchema(schema.getId(), schema.getPath());
+			validator.registerSchema(schema.getId(), schema.getPath(), schema.getTransforms());
 		}
 	}
 }
