@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bf75feaf77075452dc1011117246793",
+    "content-hash": "ef8e932c14e112b30256368b73862397",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -330,7 +330,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-01-20 09:27:09"
+            "time": "2017-01-20T09:27:09+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -463,7 +463,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API specification",
-            "time": "2017-03-15 12:50:40"
+            "time": "2017-03-15T12:50:40+00:00"
         },
         {
             "name": "elife/api-client",
@@ -519,7 +519,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API client",
-            "time": "2017-02-06 13:43:51"
+            "time": "2017-02-06T13:43:51+00:00"
         },
         {
             "name": "elife/api-sdk",
@@ -567,7 +567,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API SDK",
-            "time": "2017-03-15 12:58:27"
+            "time": "2017-03-15T12:58:27+00:00"
         },
         {
             "name": "elife/api-validator",
@@ -611,7 +611,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API validator",
-            "time": "2017-03-15 12:52:36"
+            "time": "2017-03-15T12:52:36+00:00"
         },
         {
             "name": "elife/bus-sdk",
@@ -653,7 +653,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences bus SDK",
-            "time": "2017-03-15 13:04:41"
+            "time": "2017-03-15T13:04:41+00:00"
         },
         {
             "name": "elife/logging-sdk",
@@ -689,7 +689,46 @@
                 "MIT"
             ],
             "description": "eLife Sciences logging SDK",
-            "time": "2017-01-18 09:24:06"
+            "time": "2017-01-18T09:24:06+00:00"
+        },
+        {
+            "name": "elife/ping",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elifesciences/ping-php.git",
+                "reference": "84ad0c2d505e107128743f03b123b9935e65e572"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elifesciences/ping-php/zipball/84ad0c2d505e107128743f03b123b9935e65e572",
+                "reference": "84ad0c2d505e107128743f03b123b9935e65e572",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/http-foundation": "^2.7 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "eLife\\Ping\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "eLife Sciences ping controller",
+            "time": "2017-09-18T13:33:20+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1935,7 +1974,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-02 13:15:15"
+            "time": "2017-02-02T13:15:15+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -4250,7 +4289,8 @@
         "elife/bus-sdk": 20,
         "elife/api-validator": 20,
         "doctrine/cache": 20,
-        "symfony/event-dispatcher": 20
+        "symfony/event-dispatcher": 20,
+        "elife/ping": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
