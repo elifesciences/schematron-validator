@@ -8,6 +8,7 @@ use eLife\ApiValidator\MessageValidator\JsonMessageValidator;
 use eLife\ApiValidator\SchemaFinder\PathBasedSchemaFinder;
 use eLife\App\Service\BackendClient;
 use eLife\Logging\LoggingFactory;
+use eLife\Ping\PingController;
 use GuzzleHttp\Client;
 use JsonSchema\Validator;
 use Monolog\Logger;
@@ -77,24 +78,32 @@ final class Kernel implements MinimalKernel
         $app['schematron.controller'] = function (Application $app) {
             return new DefaultController($app['schematron.backend_client']);
         };
+        $app['ping.controller'] = function() {
+            return new PingController();
+        };
     }
 
     public function applicationFlow(Application $app): Application
     {
-        // Routes
         $this->routes($app);
-        // Return
+        $app->error([$this, 'handleException']);
         return $app;
     }
 
     public function routes(Application $app)
     {
         $app->post('/document-validator/{schemaId}/file', 'schematron.controller:validateFile');
+        $app->get('/ping', 'ping.controller:pingAction');
     }
 
     public function handleException($e): Response
     {
-        return new JsonResponse($e->getTrace());
+        return new JsonResponse([
+            'message' => $e->getMessage(),
+            'line' => $e->getLine(),
+            'file' => $e->getFile(),
+            'trace' => $e->getTrace(),
+        ]);
     }
 
     public function withApp(callable $fn)
