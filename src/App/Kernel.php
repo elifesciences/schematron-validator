@@ -14,7 +14,6 @@ use JsonSchema\Validator;
 use Monolog\Logger;
 use Silex\Application;
 use Silex\Provider;
-use Silex\Provider\VarDumperServiceProvider;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,13 +22,12 @@ use Throwable;
 
 final class Kernel implements MinimalKernel
 {
-    const ROOT = __DIR__ . '/../..';
+    const ROOT = __DIR__.'/../..';
 
     private $app;
 
     public function __construct($config = [])
     {
-
         $app = new Application();
         $app->register(new Provider\ServiceControllerServiceProvider());
 
@@ -38,7 +36,7 @@ final class Kernel implements MinimalKernel
             [
                 'debug' => true,
                 'validate' => false,
-                'file_logs_path' => __DIR__ . '/logs',
+                'file_logs_path' => __DIR__.'/logs',
             ],
             $config
         );
@@ -55,13 +53,14 @@ final class Kernel implements MinimalKernel
 
         $app['message-validator'] = function (Application $app) {
             return new JsonMessageValidator(
-                new PathBasedSchemaFinder(ComposerLocator::getPath('elife/api') . '/dist/model'),
+                new PathBasedSchemaFinder(ComposerLocator::getPath('elife/api').'/dist/model'),
                 new Validator()
             );
         };
 
         $app['logger'] = function (Application $app) {
             $factory = new LoggingFactory($app['config']['file_logs_path'], 'schematron-validator');
+
             return $factory->logger();
         };
 
@@ -69,7 +68,7 @@ final class Kernel implements MinimalKernel
             return new BackendClient(
                 new Client(
                     [
-                        'base_uri' => $app['config']['backend_uri']
+                        'base_uri' => $app['config']['backend_uri'],
                     ]
                 )
             );
@@ -78,7 +77,7 @@ final class Kernel implements MinimalKernel
         $app['schematron.controller'] = function (Application $app) {
             return new DefaultController($app['schematron.backend_client']);
         };
-        $app['ping.controller'] = function() {
+        $app['ping.controller'] = function () {
             return new PingController();
         };
     }
@@ -87,6 +86,7 @@ final class Kernel implements MinimalKernel
     {
         $this->routes($app);
         $app->error([$this, 'handleException']);
+
         return $app;
     }
 
