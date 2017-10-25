@@ -102,7 +102,7 @@ final class Kernel implements MinimalKernel
             'message' => $e->getMessage(),
             'line' => $e->getLine(),
             'file' => $e->getFile(),
-            'trace' => $e->getTrace(),
+            'trace' => $e->getTraceAsString(),
         ]);
     }
 
