@@ -19,7 +19,7 @@
         "silex/web-profiler": "^2.0",
         "jms/serializer": "^1.4",
         "kevinrob/guzzle-cache-middleware": "^1.5",
-        "elife/ping": "^1.0@dev"
+        "elife/ping": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -138,4 +138,9 @@ final class Kernel implements MinimalKernel
             }
         }
     }
+
+    public function getApp() : Application
+    {
+        return $this->app;
+    }
 }
