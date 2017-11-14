@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef8e932c14e112b30256368b73862397",
+    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -330,7 +330,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-01-20T09:27:09+00:00"
+            "time": "2017-01-20 09:27:09"
         },
         {
             "name": "doctrine/instantiator",
@@ -463,7 +463,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API specification",
-            "time": "2017-03-15T12:50:40+00:00"
+            "time": "2017-03-15 12:50:40"
         },
         {
             "name": "elife/api-client",
@@ -519,7 +519,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API client",
-            "time": "2017-02-06T13:43:51+00:00"
+            "time": "2017-02-06 13:43:51"
         },
         {
             "name": "elife/api-sdk",
@@ -567,7 +567,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API SDK",
-            "time": "2017-03-15T12:58:27+00:00"
+            "time": "2017-03-15 12:58:27"
         },
         {
             "name": "elife/api-validator",
@@ -611,7 +611,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API validator",
-            "time": "2017-03-15T12:52:36+00:00"
+            "time": "2017-03-15 12:52:36"
         },
         {
             "name": "elife/bus-sdk",
@@ -653,7 +653,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences bus SDK",
-            "time": "2017-03-15T13:04:41+00:00"
+            "time": "2017-03-15 13:04:41"
         },
         {
             "name": "elife/logging-sdk",
@@ -689,7 +689,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences logging SDK",
-            "time": "2017-01-18T09:24:06+00:00"
+            "time": "2017-01-18 09:24:06"
         },
         {
             "name": "elife/ping",
@@ -728,7 +728,31 @@
                 "MIT"
             ],
             "description": "eLife Sciences ping controller",
-            "time": "2017-09-18T13:33:20+00:00"
+            "time": "2017-09-18 13:33:20"
+        },
+        {
+            "name": "elife/reference-schematron",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elifesciences/reference-schematron.git",
+                "reference": "5acf19c8e06efcc6c1693d8b77482375d2fa0d46"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/5acf19c8e06efcc6c1693d8b77482375d2fa0d46",
+                "reference": "5acf19c8e06efcc6c1693d8b77482375d2fa0d46",
+                "shasum": ""
+            },
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "issues": "https://github.com/elifesciences/reference-schematron/issues"
+            },
+            "time": "2017-10-26 14:48:44"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1974,7 +1998,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-02T13:15:15+00:00"
+            "time": "2017-02-02 13:15:15"
         },
         {
             "name": "symfony/http-foundation",
@@ -4290,7 +4314,7 @@
         "elife/api-validator": 20,
         "doctrine/cache": 20,
         "symfony/event-dispatcher": 20,
-        "elife/ping": 20
+        "elife/reference-schematron": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

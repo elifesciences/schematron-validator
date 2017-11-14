@@ -42,6 +42,8 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+
+    runtime files(project.rootDir.parent + "/vendor/elife/reference-schematron")
 }
 
 compileJava.dependsOn(processResources)

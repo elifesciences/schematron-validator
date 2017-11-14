@@ -32,7 +32,7 @@ class ValidatorTest extends WebTestCase
     public static function testFilesProvider()
     {
 
-        $directory = new \RecursiveDirectoryIterator(__DIR__ . "/../resources/test-files");
+        $directory = new \RecursiveDirectoryIterator(__DIR__ . "/../../vendor/elife/reference-schematron/test-files");
         $iterator = new \RecursiveIteratorIterator($directory);
         $files = array();
         foreach ($iterator as $info) {

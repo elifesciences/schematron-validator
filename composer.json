@@ -19,7 +19,8 @@
         "silex/web-profiler": "^2.0",
         "jms/serializer": "^1.4",
         "kevinrob/guzzle-cache-middleware": "^1.5",
-        "elife/ping": "^1.0"
+        "elife/ping": "^1.0",
+        "elife/reference-schematron": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +35,12 @@
     "scripts": {
         "server": "php -S 0.0.0.0:8088 -t web web/app_local.php",
         "server:prod": "php -S 0.0.0.0:8088 -t web web/app_prod.php"
+    },
+    "repositories": {
+        "ref-schematron-repo": {
+            "type": "vcs",
+            "url": "git@github.com:elifesciences/reference-schematron.git"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
