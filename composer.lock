@@ -736,12 +736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "5acf19c8e06efcc6c1693d8b77482375d2fa0d46"
+                "reference": "6bd9118a885f9104df894a0ee943758de4e96603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/5acf19c8e06efcc6c1693d8b77482375d2fa0d46",
-                "reference": "5acf19c8e06efcc6c1693d8b77482375d2fa0d46",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/6bd9118a885f9104df894a0ee943758de4e96603",
+                "reference": "6bd9118a885f9104df894a0ee943758de4e96603",
                 "shasum": ""
             },
             "type": "library",
@@ -752,7 +752,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2017-10-26 14:48:44"
+            "time": "2017-11-16 11:50:48"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2878,12 +2878,12 @@
             "version": "0.9.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/4de7969f4664da3cef1ccd83866c9f59378c3371",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/4de7969f4664da3cef1ccd83866c9f59378c3371",
                 "reference": "4de7969f4664da3cef1ccd83866c9f59378c3371",
                 "shasum": ""
             },

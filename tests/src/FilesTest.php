@@ -7,7 +7,16 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ValidatorTest extends WebTestCase
 {
-    private $manifest;
+    private static $fileToStatusMap = [
+        'warning' => 'VALID_WITH_WARNINGS',
+        'fail' => 'INVALID',
+        'pass' => 'VALID'
+    ];
+
+    private static $validStages = [
+        'pre-edit',
+        'final'
+    ];
 
     public function createApplication()
     {
@@ -16,15 +25,11 @@ class ValidatorTest extends WebTestCase
         return $this->kernel->getApp();
     }
 
-    private function getManifest(){
-
-
-    }
-
     public function testPing()
     {
         $client = $this->createClient();
-        $crawler = $client->request('GET', '/ping');
+        $client->request('GET', '/ping');
+
         $this->assertTrue($client->getResponse()->isOk());
     }
 
@@ -36,7 +41,7 @@ class ValidatorTest extends WebTestCase
         $iterator = new \RecursiveIteratorIterator($directory);
         $files = array();
         foreach ($iterator as $info) {
-            if (!$info->isDir() && $info->getFileName() != '.DS_Store'){
+            if (!$info->isDir() && $info->getFileName() != '.DS_Store') {
                 $files[] = array($info->getPathname());
             }
         }
@@ -44,24 +49,50 @@ class ValidatorTest extends WebTestCase
     }
 
     /**
-     * @param $testFiles
+     * @param $documentPath
      *
      * @dataProvider testFilesProvider
      */
-    public function testFiles($testFiles){
+    public function testFiles(string $documentPath)
+    {
+        $documentFilename = basename($documentPath);
+        list($code, $stage) = explode('-', $documentFilename, 2);
 
-        $file = new UploadedFile($testFiles, $testFiles, 'application/xml', filesize($testFiles), true, true);
+        if (!isset(self::$fileToStatusMap[$code])) {
+            throw new RuntimeException("Found invalid filename prefix: $code");
+        }
+
+        foreach (self::$validStages as $validStage) {
+            if (strpos($stage, $validStage) === 0) {
+                $stage = $validStage;
+                break;
+            }
+        }
+
+        if (!in_array($stage, ['pre-edit', 'final'])) {
+            $stage = 'final';
+        }
+
+        $file = new UploadedFile(
+            $documentPath,
+            $documentFilename,
+            'application/xml',
+            filesize($documentPath),
+            null,
+            true
+        );
+
         $client = $this->createClient();
-
         $client->request(
             'POST',
-            '/document-validator/final/file',
-            array(),
-            array('document' => $file)
+            "/document-validator/$stage/file",
+            [],
+            ['document' => $file]
         );
 
         $result = json_decode($client->getResponse()->getContent(), true);
-        $expectedStatus = (substr($testFiles, 0, 4) === 'pass') ? 'VALID' : 'INVALID';
+
+        $expectedStatus = self::$fileToStatusMap[$code];
         $actualStatus = $result['status'];
 
         $message = implode(
@@ -76,11 +107,8 @@ class ValidatorTest extends WebTestCase
 
         $this->assertEquals(
             $expectedStatus,
-            $actualStatus
+            $actualStatus,
+            "$documentFilename should $code on $stage, but didn't: $message"
         );
-
-
     }
-
-
 }
