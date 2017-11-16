@@ -1,23 +1,23 @@
 validator:
   schemas:
     - id: pre-edit
-      path: /eLife-elem-citation-driver-pre-edit.sch
+      path: /reference-schematron/eLife-elem-citation-driver-pre-edit.sch
       transforms:
         - /schemas/transform/fix-value-of.xslt
 
     - id: final
-      path: /eLife-elem-citation-driver-final.sch
+      path: /reference-schematron/eLife-elem-citation-driver-final.sch
       tranforms:
         - /schemas/transform/fix-value-of.xslt
 
     - id: mixed-citation-pre-edit
-      path: /eLife-elem-citation-driver-pre-edit.sch
+      path: /reference-schematron/eLife-elem-citation-driver-pre-edit.sch
       transforms:
         - /schemas/transform/fix-value-of.xslt
         - /schemas/transform/mixed-citation.xslt
 
     - id: mixed-citation-final
-      path: /eLife-elem-citation-driver-final.sch
+      path: /reference-schematron/eLife-elem-citation-driver-final.sch
       transforms:
         - /schemas/transform/fix-value-of.xslt
         - /schemas/transform/mixed-citation.xslt

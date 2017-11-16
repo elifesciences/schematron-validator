@@ -24,11 +24,9 @@ repositories {
     mavenCentral()
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs "src/main/resources", project.rootDir.parent + "/vendor/elife/reference-schematron"
-        }
+processResources {
+    from (project.rootDir.parent + "/vendor/elife/reference-schematron") {
+        into 'reference-schematron'
     }
 }
 
@@ -50,8 +48,6 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-
-    runtime files(project.rootDir.parent + "/vendor/elife/reference-schematron")
 }
 
 compileJava.dependsOn(processResources)
