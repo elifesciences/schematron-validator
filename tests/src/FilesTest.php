@@ -1,8 +1,8 @@
 <?php
 
 
-use Silex\WebTestCase;
 use eLife\App\Kernel;
+use Silex\WebTestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ValidatorTest extends WebTestCase
@@ -10,18 +10,19 @@ class ValidatorTest extends WebTestCase
     private static $fileToStatusMap = [
         'warning' => 'VALID_WITH_WARNINGS',
         'fail' => 'INVALID',
-        'pass' => 'VALID'
+        'pass' => 'VALID',
     ];
 
     private static $validStages = [
         'pre-edit',
-        'final'
+        'final',
     ];
 
     public function createApplication()
     {
-        $config = require __DIR__ . "/../../config/config.php";
+        $config = require __DIR__.'/../../config/config.php';
         $this->kernel = new Kernel($config);
+
         return $this->kernel->getApp();
     }
 
@@ -33,11 +34,9 @@ class ValidatorTest extends WebTestCase
         $this->assertTrue($client->getResponse()->isOk());
     }
 
-
     public static function testFilesProvider()
     {
-
-        $directory = new \RecursiveDirectoryIterator(__DIR__ . "/../../vendor/elife/reference-schematron/test-files");
+        $directory = new \RecursiveDirectoryIterator(__DIR__.'/../../vendor/elife/reference-schematron/test-files');
         $iterator = new \RecursiveIteratorIterator($directory);
         $files = array();
         foreach ($iterator as $info) {
@@ -45,6 +44,7 @@ class ValidatorTest extends WebTestCase
                 $files[] = array($info->getPathname());
             }
         }
+
         return $files;
     }
 
