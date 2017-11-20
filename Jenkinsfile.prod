@@ -1,0 +1,13 @@
+elifePipeline {
+    def commit
+    stage 'Checkout approved', {
+        checkout scm
+        commit = elifeGitRevision()
+    }
+
+    stage 'Deploy to prod', {
+        elifeDeploySlackNotification 'schematron-validator', 'prod'
+        builderDeployRevision 'schematron-validator--prod', commit
+        builderSmokeTests 'schematron-validator--prod', '/srv/schematron-validator'
+    }
+}
