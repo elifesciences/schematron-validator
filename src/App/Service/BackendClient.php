@@ -1,8 +1,6 @@
 <?php
 
-
 namespace eLife\App\Service;
-
 
 use GuzzleHttp\Client;
 
@@ -22,31 +20,30 @@ class BackendClient
     }
 
     /**
-     * Validate a document and
+     * Validate a document and.
      *
      * @param string $schemaId
      * @param $file
+     *
      * @return array
      */
     public function validateDocument(string $schemaId, $file): array
     {
-
         $response = $this->client->post(
             "/document-validator/$schemaId/file",
             [
                 'multipart' => [
                     [
                         'name' => 'document',
-                        'contents' => $file
+                        'contents' => $file,
                     ],
-                ]
+                ],
             ]
         );
 
-
-        $data = json_decode((string)$response->getBody(), true);
+        $data = json_decode((string) $response->getBody(), true);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \RuntimeException("Failed to decode JSON from backend.");
+            throw new \RuntimeException('Failed to decode JSON from backend.');
         }
 
         return $data;

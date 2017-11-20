@@ -21,7 +21,9 @@ final class DefaultController
         try {
             return new JsonResponse($this->client->validateDocument($schemaId, $documentFile));
         } finally {
-            fclose($documentFile);
+            if (is_resource($documentFile)) {
+                fclose($documentFile);
+            }
         }
     }
 }

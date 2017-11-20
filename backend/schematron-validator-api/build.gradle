@@ -17,17 +17,27 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'propdeps'
 
-jar {
-    baseName = 'elife-schematron-validator'
-    version = '0.1.0'
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+processResources {
+    from (project.rootDir.parent + "/vendor/elife/reference-schematron") {
+        into 'reference-schematron'
+    }
+}
+
+jar {
+    baseName = 'elife-schematron-validator'
+    version = '0.1.0'
+}
+
+bootRepackage {
+    executable = true
+}
 
 dependencies {
     optional group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'

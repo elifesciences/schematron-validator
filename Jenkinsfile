@@ -1,24 +1,18 @@
-########################################################
-# WARNING: This is not ready to use.
-########################################################
 elifePipeline {
-    stage 'Checkout'
-    checkout scm
-    def commit = elifeGitRevision()
-
-    stage 'Project tests'
-    lock('search--ci') {
-        builderDeployRevision 'search--ci', commit
-        builderProjectTests 'search--ci', '/srv/silex-starter', ['/srv/silex-starter/build/phpunit.xml']
+    def commit
+    stage 'Checkout', {
+        checkout scm
+        commit = elifeGitRevision()
     }
 
+    stage 'Project tests', {
+        lock('schematron-validator--ci') {
+            builderDeployRevision 'schematron-validator--ci', commit
+            builderProjectTests 'schematron-validator--ci', '/srv/schematron-validator'
+        }
+    }
+    
     elifeMainlineOnly {
-        stage 'End2end tests'
-        elifeEnd2EndTest({
-            builderDeployRevision 'silex-starter--end2end', commit
-            builderSmokeTests 'silex-starter--end2end', '/srv/silex-starter'
-        }, 'two')
-
         stage 'Approval'
         elifeGitMoveToBranch commit, 'approved'
 

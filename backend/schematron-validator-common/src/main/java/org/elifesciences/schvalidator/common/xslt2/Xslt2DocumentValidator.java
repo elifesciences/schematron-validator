@@ -1,8 +1,11 @@
 package org.elifesciences.schvalidator.common.xslt2;
 
+import com.google.common.base.Joiner;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.xslt.SchematronResourceSCH;
+import net.sf.saxon.lib.ErrorGatherer;
+import net.sf.saxon.s9api.StaticError;
 import org.elifesciences.schvalidator.common.*;
 import org.elifesciences.schvalidator.common.puresch.jaxp.XsltTransformableSchematronResource;
 import org.oclc.purl.dsdl.svrl.FailedAssert;
@@ -20,10 +23,7 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class Xslt2DocumentValidator implements DocumentValidator {
 	private final Map<String, ISchematronResource> schemaMap = new HashMap<>();
@@ -31,6 +31,9 @@ public final class Xslt2DocumentValidator implements DocumentValidator {
 	@Override
 	public void registerSchema(String schemaName, String inputPath, List<String> transformerPaths)
 		throws InvalidSchemaException, DocumentValidatorException {
+
+		final List<StaticError> errors = new ArrayList<>();
+		final ErrorGatherer errorGatherer = new ErrorGatherer(errors);
 
 		final List<Transformer> transformerList = new ArrayList<>();
 		final TransformerFactory factory = TransformerFactory.newInstance();
@@ -49,8 +52,10 @@ public final class Xslt2DocumentValidator implements DocumentValidator {
 		final ClassPathResource resource = new ClassPathResource(inputPath);
 		final SchematronResourceSCH schema = new XsltTransformableSchematronResource(resource, transformerList);
 
+		schema.setErrorListener(errorGatherer);
+
 		if (!schema.isValidSchematron()) {
-			throw new InvalidSchemaException(schemaName);
+			throw new InvalidSchemaException(Joiner.on(',').join(errors));
 		}
 
 		schemaMap.put(schemaName, schema);
