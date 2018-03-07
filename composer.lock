@@ -330,7 +330,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-01-20 09:27:09"
+            "time": "2017-01-20T09:27:09+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -446,12 +446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/api-raml.git",
-                "reference": "58a328e447ad09fba076da95899e91b5dca9bb8e"
+                "reference": "7d41df4b2cf2ad3043c2f4a2d41e45223e1c906e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/api-raml/zipball/58a328e447ad09fba076da95899e91b5dca9bb8e",
-                "reference": "58a328e447ad09fba076da95899e91b5dca9bb8e",
+                "url": "https://api.github.com/repos/elifesciences/api-raml/zipball/7d41df4b2cf2ad3043c2f4a2d41e45223e1c906e",
+                "reference": "7d41df4b2cf2ad3043c2f4a2d41e45223e1c906e",
                 "shasum": ""
             },
             "conflict": {
@@ -463,7 +463,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API specification",
-            "time": "2017-03-15 12:50:40"
+            "time": "2018-03-02T10:39:51+00:00"
         },
         {
             "name": "elife/api-client",
@@ -471,16 +471,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/api-client-php.git",
-                "reference": "784283919e1e9c705d30993b29adbd9494b31c13"
+                "reference": "240e78eb59aecb40fc933120dd081095abacd700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/api-client-php/zipball/784283919e1e9c705d30993b29adbd9494b31c13",
-                "reference": "784283919e1e9c705d30993b29adbd9494b31c13",
+                "url": "https://api.github.com/repos/elifesciences/api-client-php/zipball/240e78eb59aecb40fc933120dd081095abacd700",
+                "reference": "240e78eb59aecb40fc933120dd081095abacd700",
                 "shasum": ""
             },
             "require": {
-                "beberlei/assert": "^2.0",
+                "beberlei/assert": "^2.2",
                 "crell/api-problem": "^2.0",
                 "guzzlehttp/promises": "^1.0",
                 "guzzlehttp/psr7": "^1.0",
@@ -519,7 +519,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API client",
-            "time": "2017-02-06 13:43:51"
+            "time": "2018-01-31T14:03:27+00:00"
         },
         {
             "name": "elife/api-sdk",
@@ -527,12 +527,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/api-sdk-php.git",
-                "reference": "6d4c10a68a6c7060a20117cabcc27c9454a0fadf"
+                "reference": "fc0e9dea5ddfed2551aad32380a8fd003d5d375d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/api-sdk-php/zipball/6d4c10a68a6c7060a20117cabcc27c9454a0fadf",
-                "reference": "6d4c10a68a6c7060a20117cabcc27c9454a0fadf",
+                "url": "https://api.github.com/repos/elifesciences/api-sdk-php/zipball/fc0e9dea5ddfed2551aad32380a8fd003d5d375d",
+                "reference": "fc0e9dea5ddfed2551aad32380a8fd003d5d375d",
                 "shasum": ""
             },
             "require": {
@@ -543,6 +543,7 @@
                 "symfony/serializer": "^2.8.2 || ^3.0.2"
             },
             "require-dev": {
+                "csa/guzzle-cache-middleware": "^1.0",
                 "elife/api": "dev-master",
                 "elife/api-validator": "^1.0@dev",
                 "guzzlehttp/guzzle": "^6.0",
@@ -567,7 +568,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API SDK",
-            "time": "2017-03-15 12:58:27"
+            "time": "2018-03-02T10:58:06+00:00"
         },
         {
             "name": "elife/api-validator",
@@ -575,12 +576,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/api-validator-php.git",
-                "reference": "4307a752a29e8e98a305358d991d755c26f07063"
+                "reference": "53f10fb73c68badc999e294ab22e5d340f9ab539"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/api-validator-php/zipball/4307a752a29e8e98a305358d991d755c26f07063",
-                "reference": "4307a752a29e8e98a305358d991d755c26f07063",
+                "url": "https://api.github.com/repos/elifesciences/api-validator-php/zipball/53f10fb73c68badc999e294ab22e5d340f9ab539",
+                "reference": "53f10fb73c68badc999e294ab22e5d340f9ab539",
                 "shasum": ""
             },
             "require": {
@@ -611,7 +612,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences API validator",
-            "time": "2017-03-15 12:52:36"
+            "time": "2017-09-06T06:41:40+00:00"
         },
         {
             "name": "elife/bus-sdk",
@@ -619,30 +620,36 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/bus-sdk-php.git",
-                "reference": "08402d82f43f9c7d1a7e591d5301f0a6950353f1"
+                "reference": "8e8a21ba42b8ad367e84877236109c440b6c9615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/bus-sdk-php/zipball/08402d82f43f9c7d1a7e591d5301f0a6950353f1",
-                "reference": "08402d82f43f9c7d1a7e591d5301f0a6950353f1",
+                "url": "https://api.github.com/repos/elifesciences/bus-sdk-php/zipball/8e8a21ba42b8ad367e84877236109c440b6c9615",
+                "reference": "8e8a21ba42b8ad367e84877236109c440b6c9615",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.19",
                 "doctrine/cache": "^1.6",
-                "elife/api-sdk": "dev-master",
-                "elife/logging-sdk": "dev-master",
+                "elife/api-sdk": "^1.0",
+                "elife/logging-sdk": "^1.0",
                 "jms/serializer": "^1.4",
-                "psr/log": "1.0.*"
+                "php": "^7.0",
+                "psr/log": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7",
-                "symfony/console": "^3.2"
+                "phpunit/phpunit": "^5.7.1 || ^6.0",
+                "symfony/console": "^2.7 || ^3.2"
             },
             "suggest": {
-                "symfony/console": "To use Command classes"
+                "symfony/console": "^2.7 || ^3.2, to use Command classes"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "eLife\\Bus\\": "./src"
@@ -652,8 +659,8 @@
             "license": [
                 "MIT"
             ],
-            "description": "eLife Sciences bus SDK",
-            "time": "2017-03-15 13:04:41"
+            "description": "eLife Sciences Bus SDK",
+            "time": "2018-03-01T11:45:31+00:00"
         },
         {
             "name": "elife/logging-sdk",
@@ -661,24 +668,40 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/logging-sdk-php.git",
-                "reference": "ddc23ec75b58a4fe2692e4cfae395bc03a49955d"
+                "reference": "81a10f8a88f528ff516b1a83e957a91a1d391c75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/logging-sdk-php/zipball/ddc23ec75b58a4fe2692e4cfae395bc03a49955d",
-                "reference": "ddc23ec75b58a4fe2692e4cfae395bc03a49955d",
+                "url": "https://api.github.com/repos/elifesciences/logging-sdk-php/zipball/81a10f8a88f528ff516b1a83e957a91a1d391c75",
+                "reference": "81a10f8a88f528ff516b1a83e957a91a1d391c75",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "^1.22"
+                "monolog/monolog": "^1.22",
+                "php": "^7.0",
+                "psr/log": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.6"
+                "crell/api-problem": "^2.0",
+                "elife/api-problem": "^1.0",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^5.7.7 || ^6.0",
+                "pimple/pimple": "^3.0",
+                "silex/silex": "^2.0",
+                "symfony/browser-kit": "^3.0",
+                "symfony/debug": "^2.8 || ^3.0",
+                "symfony/http-kernel": "^2.7 || ^3.0"
             },
             "suggest": {
-                "ext/newrelic": "Enables the Monitoring class"
+                "ext/newrelic": "Enables the Monitoring class",
+                "silex/silex": "^2.0, to use LoggerProvider"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "eLife\\Logging\\": "./src"
@@ -689,7 +712,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences logging SDK",
-            "time": "2017-01-18 09:24:06"
+            "time": "2018-01-30T11:28:03+00:00"
         },
         {
             "name": "elife/ping",
@@ -697,12 +720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/ping-php.git",
-                "reference": "84ad0c2d505e107128743f03b123b9935e65e572"
+                "reference": "bface5eb45cc09c0905ab0e860bacbf198dedb31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/ping-php/zipball/84ad0c2d505e107128743f03b123b9935e65e572",
-                "reference": "84ad0c2d505e107128743f03b123b9935e65e572",
+                "url": "https://api.github.com/repos/elifesciences/ping-php/zipball/bface5eb45cc09c0905ab0e860bacbf198dedb31",
+                "reference": "bface5eb45cc09c0905ab0e860bacbf198dedb31",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +733,18 @@
                 "symfony/http-foundation": "^2.7 || ^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7 || ^6.0"
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "pimple/pimple": "^3.0",
+                "silex/silex": "^2.0",
+                "symfony/browser-kit": "^2.7 || ^3.0",
+                "symfony/config": "^2.8 || ^3.0",
+                "symfony/dependency-injection": "^2.8 || ^3.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0",
+                "symfony/http-kernel": "^2.7 || ^3.0"
+            },
+            "suggest": {
+                "silex/silex": "^2.0, to use PingControllerProvider",
+                "symfony/http-kernel": "^2.7 || ^3.0, to use PingBundle"
             },
             "type": "library",
             "extra": {
@@ -728,7 +762,7 @@
                 "MIT"
             ],
             "description": "eLife Sciences ping controller",
-            "time": "2017-09-18 13:33:20"
+            "time": "2017-10-11T09:27:00+00:00"
         },
         {
             "name": "elife/reference-schematron",
@@ -736,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "829cd7faed51db9e26b403940118b2d5e93a876c"
+                "reference": "aec5aa850c64db8828ef1bc8ace741f86aefc808"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/829cd7faed51db9e26b403940118b2d5e93a876c",
-                "reference": "829cd7faed51db9e26b403940118b2d5e93a876c",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/aec5aa850c64db8828ef1bc8ace741f86aefc808",
+                "reference": "aec5aa850c64db8828ef1bc8ace741f86aefc808",
                 "shasum": ""
             },
             "type": "library",
@@ -752,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2017-11-16 17:10:03"
+            "time": "2018-03-07T12:22:15+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1998,7 +2032,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-02 13:15:15"
+            "time": "2017-02-02T13:15:15+00:00"
         },
         {
             "name": "symfony/http-foundation",
