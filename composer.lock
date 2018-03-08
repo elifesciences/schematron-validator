@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "aec5aa850c64db8828ef1bc8ace741f86aefc808"
+                "reference": "b913b0753cf84d15fee7ab84a613697d37aad084"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/aec5aa850c64db8828ef1bc8ace741f86aefc808",
-                "reference": "aec5aa850c64db8828ef1bc8ace741f86aefc808",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/b913b0753cf84d15fee7ab84a613697d37aad084",
+                "reference": "b913b0753cf84d15fee7ab84a613697d37aad084",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-03-07T12:22:15+00:00"
+            "time": "2018-03-07T16:54:13+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
