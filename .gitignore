@@ -2,5 +2,6 @@
 /vendor/
 /cache/
 /config/local.php
+/.php_cs.cache
 /tests/raml/
 !/tests/raml/.gitkeep

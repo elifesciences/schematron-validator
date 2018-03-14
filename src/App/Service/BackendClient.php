@@ -27,7 +27,7 @@ class BackendClient
      *
      * @return array
      */
-    public function validateDocument(string $schemaId, $file): array
+    public function validateDocument(string $schemaId, $file) : array
     {
         $response = $this->client->post(
             "/document-validator/$schemaId/file",
@@ -42,7 +42,7 @@ class BackendClient
         );
 
         $data = json_decode((string) $response->getBody(), true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
+        if (JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException('Failed to decode JSON from backend.');
         }
 

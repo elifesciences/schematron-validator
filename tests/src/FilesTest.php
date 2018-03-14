@@ -40,7 +40,7 @@ class ValidatorTest extends WebTestCase
         $iterator = new \RecursiveIteratorIterator($directory);
         $files = array();
         foreach ($iterator as $info) {
-            if (!$info->isDir() && $info->getFileName() != '.DS_Store') {
+            if (!$info->isDir() && '.DS_Store' != $info->getFileName()) {
                 $files[] = array($info->getPathname());
             }
         }
@@ -63,7 +63,7 @@ class ValidatorTest extends WebTestCase
         }
 
         foreach (self::$validStages as $validStage) {
-            if (strpos($stage, $validStage) === 0) {
+            if (0 === strpos($stage, $validStage)) {
                 $stage = $validStage;
                 break;
             }

@@ -82,7 +82,7 @@ final class Kernel implements MinimalKernel
         };
     }
 
-    public function applicationFlow(Application $app): Application
+    public function applicationFlow(Application $app) : Application
     {
         $this->routes($app);
         $app->error([$this, 'handleException']);
@@ -96,7 +96,7 @@ final class Kernel implements MinimalKernel
         $app->get('/ping', 'ping.controller:pingAction');
     }
 
-    public function handleException($e): Response
+    public function handleException($e) : Response
     {
         return new JsonResponse([
             'message' => $e->getMessage(),
