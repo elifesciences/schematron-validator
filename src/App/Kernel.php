@@ -11,7 +11,6 @@ use eLife\Logging\LoggingFactory;
 use eLife\Ping\PingController;
 use GuzzleHttp\Client;
 use JsonSchema\Validator;
-use Monolog\Logger;
 use Silex\Application;
 use Silex\Provider;
 use Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory;
