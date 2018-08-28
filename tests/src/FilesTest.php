@@ -1,6 +1,5 @@
 <?php
 
-
 use eLife\App\Kernel;
 use Silex\WebTestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
