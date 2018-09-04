@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed53bab823fd4b9803d7df55f45fee33",
+    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-special-characters",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "808a3a59026a24b212002034b685ea54b1196699"
+                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/808a3a59026a24b212002034b685ea54b1196699",
-                "reference": "808a3a59026a24b212002034b685ea54b1196699",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
+                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/special-characters",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-08-13T15:06:26+00:00"
+            "time": "2018-09-04T15:52:20+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
