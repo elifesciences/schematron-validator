@@ -20,7 +20,7 @@
         "jms/serializer": "^1.4",
         "kevinrob/guzzle-cache-middleware": "^1.5",
         "elife/ping": "^1.0",
-        "elife/reference-schematron": "dev-master"
+        "elife/reference-schematron": "dev-data-accessibility-test-first"
     },
     "autoload": {
         "psr-4": {
