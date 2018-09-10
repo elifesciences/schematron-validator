@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "533599fcb8fa99133d8a00f3ff0f3cf4",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-data-accessibility-test-fail",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f"
+                "reference": "3c34ca38e47bcaf039cb913dd368bc857762d805"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
-                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/3c34ca38e47bcaf039cb913dd368bc857762d805",
+                "reference": "3c34ca38e47bcaf039cb913dd368bc857762d805",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/data-accessibility-test-fail",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-09-04T15:52:20+00:00"
+            "time": "2018-09-10T16:15:19+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1855,6 +1855,7 @@
             "keywords": [
                 "microframework"
             ],
+            "abandoned": "symfony/flex",
             "time": "2016-11-06T18:09:06+00:00"
         },
         {
