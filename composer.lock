@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "059b5a3ad5ed5d31b98c3a4fad95484b9bd4886d"
+                "reference": "7744d35cc4eb27c38ff5a8c5bbb53d11820f438b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/059b5a3ad5ed5d31b98c3a4fad95484b9bd4886d",
-                "reference": "059b5a3ad5ed5d31b98c3a4fad95484b9bd4886d",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/7744d35cc4eb27c38ff5a8c5bbb53d11820f438b",
+                "reference": "7744d35cc4eb27c38ff5a8c5bbb53d11820f438b",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/data-accessibility-test-first",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-09-10T15:30:24+00:00"
+            "time": "2018-09-10T15:56:34+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
