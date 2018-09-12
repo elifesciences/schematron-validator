@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f"
+                "reference": "a225d87051d3761d1ad3782e7ea4e21f705ee006"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
-                "reference": "82d20be1f2e9b1e07d827d3ee2f3c352c739723f",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/a225d87051d3761d1ad3782e7ea4e21f705ee006",
+                "reference": "a225d87051d3761d1ad3782e7ea4e21f705ee006",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-09-04T15:52:20+00:00"
+            "time": "2018-09-12T10:51:58+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1855,6 +1855,7 @@
             "keywords": [
                 "microframework"
             ],
+            "abandoned": "symfony/flex",
             "time": "2016-11-06T18:09:06+00:00"
         },
         {
