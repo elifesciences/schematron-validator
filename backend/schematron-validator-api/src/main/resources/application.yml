@@ -24,5 +24,4 @@ validator:
 
     - id: jats4r
       path: /reference-schematron/eLife-elem-citation-driver-final.sch
-      tranforms:
-        - /schemas/transform/fix-value-of.xslt
+      tranforms: []
