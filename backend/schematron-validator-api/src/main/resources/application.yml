@@ -23,5 +23,5 @@ validator:
         - /schemas/transform/mixed-citation.xslt
 
     - id: jats4r
-      path: /reference-schematron/eLife-elem-citation-driver-final.sch
-      tranforms: []
+      path: /jats4r-validator/schema/1.0/jats4r.sch
+      transforms: []
