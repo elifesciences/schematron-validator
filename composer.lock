@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "0c3d805b731316991e81477e9484751f",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -960,6 +960,16 @@
             "time": "2016-06-24T23:00:38+00:00"
         },
         {
+            "name": "jats4r/validator",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JATS4R/validator",
+                "reference": "master"
+            },
+            "type": "library"
+        },
+        {
             "name": "jms/metadata",
             "version": "1.6.0",
             "source": {
@@ -1913,6 +1923,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
+            "abandoned": true,
             "time": "2016-11-21T23:51:53+00:00"
         },
         {

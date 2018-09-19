@@ -20,7 +20,8 @@
         "jms/serializer": "^1.4",
         "kevinrob/guzzle-cache-middleware": "^1.5",
         "elife/ping": "^1.0",
-        "elife/reference-schematron": "dev-master"
+        "elife/reference-schematron": "dev-master",
+        "jats4r/validator": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -40,6 +41,18 @@
         "ref-schematron-repo": {
             "type": "vcs",
             "url": "git@github.com:elifesciences/reference-schematron.git"
+        },
+        "ref-jats4r-schematron-repo": {
+            "type": "package",
+            "package": {
+                "name": "jats4r/validator",
+                "version": "1.0.0",
+                "source": {
+                    "url": "https://github.com/JATS4R/validator",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     },
     "minimum-stability": "dev",

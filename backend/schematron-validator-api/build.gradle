@@ -28,6 +28,9 @@ processResources {
     from (project.rootDir.parent + "/vendor/elife/reference-schematron") {
         into 'reference-schematron'
     }
+    from (project.rootDir.parent + "/vendor/jats4r/validator") {
+        into 'jats4r-validator'
+    }
 }
 
 jar {

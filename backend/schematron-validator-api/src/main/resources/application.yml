@@ -21,3 +21,7 @@ validator:
       transforms:
         - /schemas/transform/fix-value-of.xslt
         - /schemas/transform/mixed-citation.xslt
+
+    - id: jats4r
+      path: /jats4r-validator/schema/1.0/jats4r.sch
+      transforms: []
