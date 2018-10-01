@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "a225d87051d3761d1ad3782e7ea4e21f705ee006"
+                "reference": "3d7887705bed708ca24d6146aa9debfa921b813d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/a225d87051d3761d1ad3782e7ea4e21f705ee006",
-                "reference": "a225d87051d3761d1ad3782e7ea4e21f705ee006",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/3d7887705bed708ca24d6146aa9debfa921b813d",
+                "reference": "3d7887705bed708ca24d6146aa9debfa921b813d",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-09-12T10:51:58+00:00"
+            "time": "2018-10-01T10:25:02+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1913,6 +1913,7 @@
             ],
             "description": "A WebProfiler for Silex",
             "homepage": "http://silex.sensiolabs.org/",
+            "abandoned": true,
             "time": "2016-11-21T23:51:53+00:00"
         },
         {
