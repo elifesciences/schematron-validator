@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "c667f4b4a609b661c98bd94eb32705d9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-person-group-fix-books",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "3d7887705bed708ca24d6146aa9debfa921b813d"
+                "reference": "ebd7995e526fa50c814f551f1ce9b2a995438dc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/3d7887705bed708ca24d6146aa9debfa921b813d",
-                "reference": "3d7887705bed708ca24d6146aa9debfa921b813d",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/ebd7995e526fa50c814f551f1ce9b2a995438dc9",
+                "reference": "ebd7995e526fa50c814f551f1ce9b2a995438dc9",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/person-group-fix-books",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-10-01T10:25:02+00:00"
+            "time": "2018-10-11T16:35:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
