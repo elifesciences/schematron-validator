@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a73fa72a5a35c496bd61f8a2da3b01d",
+    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-data-accessiblity-bug",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "fde0407c955dea1697f4a5d426bc0debe7030aa9"
+                "reference": "5877b7b9c25c809e435f126ecb8a01b3220441cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/fde0407c955dea1697f4a5d426bc0debe7030aa9",
-                "reference": "fde0407c955dea1697f4a5d426bc0debe7030aa9",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/5877b7b9c25c809e435f126ecb8a01b3220441cc",
+                "reference": "5877b7b9c25c809e435f126ecb8a01b3220441cc",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/data-accessiblity-bug",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-10-29T15:03:50+00:00"
+            "time": "2018-11-02T14:02:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
