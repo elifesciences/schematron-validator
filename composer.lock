@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "d99ea2b8718eda9e3ad131d79ab9d867",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-element-citation-general-update",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "3a96800a3b56cc2e86c2c2dd1f831a755d597e82"
+                "reference": "d8f5d3b64c9e56540befcb17620be02ddb8bf4b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/3a96800a3b56cc2e86c2c2dd1f831a755d597e82",
-                "reference": "3a96800a3b56cc2e86c2c2dd1f831a755d597e82",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/d8f5d3b64c9e56540befcb17620be02ddb8bf4b4",
+                "reference": "d8f5d3b64c9e56540befcb17620be02ddb8bf4b4",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/element-citation-general-update",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-01-23T11:49:04+00:00"
+            "time": "2019-01-23T12:03:01+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
