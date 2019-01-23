@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "3c6ee2b7c84807872b8fa988a2632461",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-patent-source-update",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "5877b7b9c25c809e435f126ecb8a01b3220441cc"
+                "reference": "66d7428e39445af2ef201ba7c3b362864694253a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/5877b7b9c25c809e435f126ecb8a01b3220441cc",
-                "reference": "5877b7b9c25c809e435f126ecb8a01b3220441cc",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/66d7428e39445af2ef201ba7c3b362864694253a",
+                "reference": "66d7428e39445af2ef201ba7c3b362864694253a",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/patent-source-update",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2018-11-02T14:02:05+00:00"
+            "time": "2018-12-11T15:19:32+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
