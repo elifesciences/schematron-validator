@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "cf3d76b6f58ecd3e54a8a52ea3c99b43",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-element-citation-high-update",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "533049fc73f0c5371ea38f543937474ecc3be6eb"
+                "reference": "3f194b451e897a56db55fd51089ca8d40f5be79c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/533049fc73f0c5371ea38f543937474ecc3be6eb",
-                "reference": "533049fc73f0c5371ea38f543937474ecc3be6eb",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/3f194b451e897a56db55fd51089ca8d40f5be79c",
+                "reference": "3f194b451e897a56db55fd51089ca8d40f5be79c",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/element-citation-high-update",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-02-26T17:59:55+00:00"
+            "time": "2019-03-05T09:39:00+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3608,6 +3608,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2016-12-08T20:27:08+00:00"
         },
         {
@@ -4349,8 +4350,7 @@
         "elife/bus-sdk": 20,
         "elife/api-validator": 20,
         "doctrine/cache": 20,
-        "symfony/event-dispatcher": 20,
-        "elife/reference-schematron": 20
+        "symfony/event-dispatcher": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
