@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "d4155d154bfe0f5fdbdf384e2259b847db699345"
+                "reference": "62d6aaae97322a01d425e435b103d6d16d7f3664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/d4155d154bfe0f5fdbdf384e2259b847db699345",
-                "reference": "d4155d154bfe0f5fdbdf384e2259b847db699345",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/62d6aaae97322a01d425e435b103d6d16d7f3664",
+                "reference": "62d6aaae97322a01d425e435b103d6d16d7f3664",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/patent-fix",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-04-16T14:13:31+00:00"
+            "time": "2019-04-16T14:28:47+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
