@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "e09640962b8a0f1eb09c7abc303c99fd",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-patent-fix",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "4e837256837298ee54c37e564eda0fcd32dd5028"
+                "reference": "d4155d154bfe0f5fdbdf384e2259b847db699345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/4e837256837298ee54c37e564eda0fcd32dd5028",
-                "reference": "4e837256837298ee54c37e564eda0fcd32dd5028",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/d4155d154bfe0f5fdbdf384e2259b847db699345",
+                "reference": "d4155d154bfe0f5fdbdf384e2259b847db699345",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/patent-fix",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-04-12T07:42:54+00:00"
+            "time": "2019-04-16T14:13:31+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4350,8 +4350,7 @@
         "elife/bus-sdk": 20,
         "elife/api-validator": 20,
         "doctrine/cache": 20,
-        "symfony/event-dispatcher": 20,
-        "elife/reference-schematron": 20
+        "symfony/event-dispatcher": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
