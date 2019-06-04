@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b5bab916838cbbb21352cc062f2028b",
+    "content-hash": "111c8baa480859d2edd8e67ff29a972e",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-special-characters-2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "348c2798a69d9d1f080c1bc9a6588767079ecc7e"
+                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/348c2798a69d9d1f080c1bc9a6588767079ecc7e",
-                "reference": "348c2798a69d9d1f080c1bc9a6588767079ecc7e",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/88221637e9b5a466a0720bea75f4c2a471aaa590",
+                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/special-characters-2",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-05-30T13:43:21+00:00"
+            "time": "2019-06-04T14:31:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
