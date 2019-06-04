@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "6b5bab916838cbbb21352cc062f2028b",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-master",
+            "version": "dev-special-characters-2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "f363a2757bbe38e5b96220a6cc4f20451b145513"
+                "reference": "348c2798a69d9d1f080c1bc9a6588767079ecc7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/f363a2757bbe38e5b96220a6cc4f20451b145513",
-                "reference": "f363a2757bbe38e5b96220a6cc4f20451b145513",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/348c2798a69d9d1f080c1bc9a6588767079ecc7e",
+                "reference": "348c2798a69d9d1f080c1bc9a6588767079ecc7e",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/special-characters-2",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-04-16T14:34:38+00:00"
+            "time": "2019-05-30T13:43:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4350,8 +4350,7 @@
         "elife/bus-sdk": 20,
         "elife/api-validator": 20,
         "doctrine/cache": 20,
-        "symfony/event-dispatcher": 20,
-        "elife/reference-schematron": 20
+        "symfony/event-dispatcher": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
