@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "f363a2757bbe38e5b96220a6cc4f20451b145513"
+                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/f363a2757bbe38e5b96220a6cc4f20451b145513",
-                "reference": "f363a2757bbe38e5b96220a6cc4f20451b145513",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/88221637e9b5a466a0720bea75f4c2a471aaa590",
+                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-04-16T14:34:38+00:00"
+            "time": "2019-06-04T14:31:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
