@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dda48f56350cdb096f168b89c4b8bf8",
+    "content-hash": "111c8baa480859d2edd8e67ff29a972e",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590"
+                "reference": "4120c17204656663311d1aef573cf34280fed3b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/88221637e9b5a466a0720bea75f4c2a471aaa590",
-                "reference": "88221637e9b5a466a0720bea75f4c2a471aaa590",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/4120c17204656663311d1aef573cf34280fed3b2",
+                "reference": "4120c17204656663311d1aef573cf34280fed3b2",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-06-04T14:31:39+00:00"
+            "time": "2019-08-09T14:03:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4350,8 +4350,7 @@
         "elife/bus-sdk": 20,
         "elife/api-validator": 20,
         "doctrine/cache": 20,
-        "symfony/event-dispatcher": 20,
-        "elife/reference-schematron": 20
+        "symfony/event-dispatcher": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
