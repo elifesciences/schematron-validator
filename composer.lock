@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4a23ecae86911bcb50428c6a82c9294",
+    "content-hash": "111c8baa480859d2edd8e67ff29a972e",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -766,16 +766,16 @@
         },
         {
             "name": "elife/reference-schematron",
-            "version": "dev-sharp-s-fix",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "19f4a569a77c7943517c7b11db1503f8a455267c"
+                "reference": "4120c17204656663311d1aef573cf34280fed3b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/19f4a569a77c7943517c7b11db1503f8a455267c",
-                "reference": "19f4a569a77c7943517c7b11db1503f8a455267c",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/4120c17204656663311d1aef573cf34280fed3b2",
+                "reference": "4120c17204656663311d1aef573cf34280fed3b2",
                 "shasum": ""
             },
             "type": "library",
@@ -783,10 +783,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/elifesciences/reference-schematron/tree/sharp-s-fix",
+                "source": "https://github.com/elifesciences/reference-schematron/tree/master",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-08-09T13:55:31+00:00"
+            "time": "2019-08-09T14:03:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
