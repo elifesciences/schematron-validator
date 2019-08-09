@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "225a88971456d412727f27c9e510ddbfd6ceece1"
+                "reference": "19f4a569a77c7943517c7b11db1503f8a455267c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/225a88971456d412727f27c9e510ddbfd6ceece1",
-                "reference": "225a88971456d412727f27c9e510ddbfd6ceece1",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/19f4a569a77c7943517c7b11db1503f8a455267c",
+                "reference": "19f4a569a77c7943517c7b11db1503f8a455267c",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/sharp-s-fix",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-06-18T13:00:04+00:00"
+            "time": "2019-08-09T13:55:31+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
