@@ -770,12 +770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elifesciences/reference-schematron.git",
-                "reference": "b98eefdd458dea3a7f3ab55b0f0850b3d21dc01d"
+                "reference": "abed9b82227227d3db60b6f271d161f899d8930d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/b98eefdd458dea3a7f3ab55b0f0850b3d21dc01d",
-                "reference": "b98eefdd458dea3a7f3ab55b0f0850b3d21dc01d",
+                "url": "https://api.github.com/repos/elifesciences/reference-schematron/zipball/abed9b82227227d3db60b6f271d161f899d8930d",
+                "reference": "abed9b82227227d3db60b6f271d161f899d8930d",
                 "shasum": ""
             },
             "type": "library",
@@ -786,7 +786,7 @@
                 "source": "https://github.com/elifesciences/reference-schematron/tree/pr-28",
                 "issues": "https://github.com/elifesciences/reference-schematron/issues"
             },
-            "time": "2019-10-30T09:35:12+00:00"
+            "time": "2019-10-30T09:48:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
