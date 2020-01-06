@@ -37,10 +37,10 @@ class ValidatorTest extends WebTestCase
     {
         $directory = new \RecursiveDirectoryIterator(__DIR__.'/../../vendor/elife/reference-schematron/test-files');
         $iterator = new \RecursiveIteratorIterator($directory);
-        $files = array();
+        $files = [];
         foreach ($iterator as $info) {
             if (!$info->isDir() && '.DS_Store' != $info->getFileName()) {
-                $files[] = array($info->getPathname());
+                $files[] = [$info->getPathname()];
             }
         }
 
