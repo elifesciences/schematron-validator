@@ -22,10 +22,7 @@ class BackendClient
     /**
      * Validate a document and.
      *
-     * @param string $schemaId
      * @param $file
-     *
-     * @return array
      */
     public function validateDocument(string $schemaId, $file) : array
     {
