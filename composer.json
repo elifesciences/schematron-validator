@@ -1,11 +1,6 @@
 {
     "name": "elife/silex-starter",
     "description": "eLife Silex Starter Project",
-    "config": {
-        "platform": {
-            "php": "7.0.33"
-        }
-    },
     "require": {
         "elife/api": "dev-master",
         "elife/bus-sdk": "dev-master",

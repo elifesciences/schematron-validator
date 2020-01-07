@@ -4922,8 +4922,5 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "7.0.33"
-    }
+    "platform-dev": []
 }
